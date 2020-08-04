@@ -6,8 +6,7 @@ This works for Conda environments that declare $CONDA_DEFAULT_ENV as well as Vir
 
 If both Conda and Virtualenv have active environments, the prompt defaults to the Virtualenv environment, *not* what your current `python` points to, so beware.
 
-Don't run this and the `virtualenv` plugin at the same time! I mean, you can, but your prompt will tell you your venv twice.
-
+If you still see a label for your virtualenv to the left of your prompt after you activate, add `export VIRTUAL_ENV_DISABLE_PROMPT=1` to the end of your `.zshrc`.
 ### Installation
 
 To install this plugin, simply merge the `themes` folder with `.oh-my-zsh/themes`. You can also just move the theme file to that folder, which does the same thing.
