@@ -9,4 +9,12 @@ If both Conda and Virtualenv have active environments, the prompt defaults to th
 If you still see a label for your virtualenv to the left of your prompt after you activate, add `export VIRTUAL_ENV_DISABLE_PROMPT=1` to the end of your `.zshrc`.
 ### Installation
 
-To install this plugin, simply merge the `themes` folder with `.oh-my-zsh/themes`. You can also just move the theme file to that folder, which does the same thing.
+To install this plugin, run the following from the repo folder:
+
+```sh
+ln themes/bureau-env.zsh-theme ~/.oh-my-zsh/themes/
+```
+
+If Oh My Zsh is installed somewhere else, change the path above to the appropriate directory.
+
+On Windows, you'll have to copy the file directly.
