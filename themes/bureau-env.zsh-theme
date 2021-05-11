@@ -110,13 +110,21 @@ bureau_env () {
 
 _PATH="%{$fg_bold[white]%}%~%{$reset_color%}"
 
-if [[ $EUID -eq 0 ]]; then
+if [[ $EUID -eq 0 ]]; then 
   _USERNAME="%{$fg_bold[red]%}%n"
-  _LIBERTY="%{$fg[red]%}#"
-else
+  if [ -n "$SSH_CLIENT" ]; then 
+    _LIBERTY="%{$fg[yellow]%}#"
+  else
+    _LIBERTY="%{$fg[red]%}#"
+  fi 
+else 
   _USERNAME="%{$fg_bold[white]%}%n"
-  _LIBERTY="%{$fg[green]%}$"
-fi
+  if [ -n "$SSH_CLIENT" ]; then 
+    _LIBERTY="%{$fg[yellow]%}$"
+  else 
+    _LIBERTY="%{$fg[green]%}$"
+  fi 
+fi 
 _USERNAME="$_USERNAME%{$reset_color%}@%m"
 _LIBERTY="$_LIBERTY%{$reset_color%}"
 
